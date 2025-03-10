@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Flight Price Prediction</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking Form</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <h2><i class="fas fa-plane-departure icon-title"></i>Flight Price Prediction</h2>
+        <form action="/predict/" method="post">
+            <div class="input-group">
+                <label for="departure"><i class="fas fa-calendar-alt icon orange"></i> Departure Date</label>
+                <input type="datetime-local" id="departure" required name="departure">
+            </div>
+            <div class="input-group">
+                <label for="arrival"><i class="fas fa-calendar-check icon green"></i> Arrival Date</label>
+                <input type="datetime-local" id="arrival" required name="arrival">
+            </div>
+            <div class="input-group">
+                <label for="source"><i class="fas fa-map-marker-alt icon red"></i> Source</label>
+                <select id="source" name="source" required="required">
+                    <option value="Delhi">Delhi</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">Chennai</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="destination"><i class="fas fa-map-marker-alt icon blue"></i> Destination</label>
+                <select id="destination" name="destination" required="required">
+                    <option value="Cochin">Cochin</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="stopage"><i class="fas fa-exchange-alt icon purple"></i> Stopage</label>
+                <select id="stopage" name="stopage" required="required">
+                    <option value="0">Non-Stop</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="airline"><i class="fas fa-plane icon pink"></i> Airline</label>
+                <select id="airline" name="airline" required="required">
+                    <option value="Jet Airways">Jet Airways</option>
+                    <option value="IndiGo">IndiGo</option>
+                    <option value="Air India">Air India</option>
+                    <option value="Multiple carriers">Multiple carriers</option>
+                    <option value="SpiceJet">SpiceJet</option>
+                    <option value="Vistara">Vistara</option>
+                    <option value="Air Asia">Air Asia</option>
+                    <option value="GoAir">GoAir</option>
+                    <option value="Multiple carriers Premium economy">Multiple carriers Premium economy
+                    </option>
+                    <option value="Jet Airways Business">Jet Airways Business</option>
+                    <option value="Vistara Premium economy">Vistara Premium economy</option>
+                    <option value="Trujet">Trujet</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane icon white"></i>Predict Now</button>
+        </form>
+        <br>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+</body>
+
+</html>
