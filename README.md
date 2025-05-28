@@ -32,7 +32,7 @@ This project is a robust Flight Price Prediction web application developed using
 1. Clone the repository:
 
 ```bash
-   git clone https://github.com/your-username/Flight-Price-Prediction.git
+   git clone https://github.com/sagarprajapat2004/Flight-Price-Prediction.git
 ```
 
 2. Navigate to the project directory:
